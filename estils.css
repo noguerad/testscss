@@ -1,0 +1,65 @@
+:root {
+  --clr-fons: lightgrey;
+  --clr-font: black;
+  --clr-llista: orange;
+}
+
+body{
+  background: var(--clr-fons);
+}
+
+#.triangle {
+  width: 5em;
+  height: 5em;
+  border:5em solid;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: red;
+
+}
+
+.texts {
+  counter-reset: contador-texts;
+}
+
+.llista {
+
+}
+
+h2 {
+  position: relative;
+  padding: 0 2em;
+}
+
+/* h2::before {
+  counter-increment: contador-texts;
+  content: counter(contador-texts)' > ';
+  position:absolute;
+  left: 0.5em;
+} */
+
+h2::before {
+  content: open-quote;
+}
+
+h2::after {
+  content: close-quote;
+}
+
+ol {
+  list-style:none;
+  counter-reset: contador-llista;
+  margin: 0 2em;
+}
+
+li {
+
+
+}
+
+li::before {
+  counter-increment: contador-llista;
+  content: counter(contador-llista) ': ';
+  color: var(--clr-llista);
+}
